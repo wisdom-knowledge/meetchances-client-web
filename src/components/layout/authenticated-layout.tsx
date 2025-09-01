@@ -1,15 +1,15 @@
-import Cookies from 'js-cookie'
 import { useEffect } from 'react'
-import { Outlet, useMatches, useRouterState } from '@tanstack/react-router'
+import Cookies from 'js-cookie'
 import { useQuery } from '@tanstack/react-query'
-import { fetchTalentMe } from '@/lib/api'
+import { Outlet, useMatches, useRouterState } from '@tanstack/react-router'
+import { includes } from 'lodash'
 import { useAuthStore } from '@/stores/authStore'
+import { fetchTalentMe } from '@/lib/api'
 import { cn } from '@/lib/utils'
 import { SearchProvider } from '@/context/search-context'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/layout/app-sidebar'
 import SkipToMain from '@/components/skip-to-main'
-import { includes } from 'lodash'
 
 interface Props {
   children?: React.ReactNode
@@ -19,11 +19,13 @@ export function AuthenticatedLayout({ children }: Props) {
   const defaultOpen = Cookies.get('sidebar_state') !== 'false'
   const setUser = useAuthStore((s) => s.auth.setUser)
   const matches = useMatches()
-  const hideSidebar = matches.some((m) => (m.staticData as { hideSidebar?: boolean } | undefined)?.hideSidebar)
+  const hideSidebar = matches.some(
+    (m) => (m.staticData as { hideSidebar?: boolean } | undefined)?.hideSidebar
+  )
   const { location } = useRouterState()
 
   // 不调用talentme接口的路由列表
-  const noTalentMeRoutes = ['/job-detail']
+  const noTalentMeRoutes: string[] = []
 
   const { data, error } = useQuery({
     queryKey: ['current-user'],
@@ -61,8 +63,10 @@ export function AuthenticatedLayout({ children }: Props) {
           id='content'
           className={cn(
             'ml-auto w-full max-w-full',
-            !hideSidebar && 'peer-data-[state=collapsed]:w-[calc(100%-var(--sidebar-width-icon)-1rem)]',
-            !hideSidebar && 'peer-data-[state=expanded]:w-[calc(100%-var(--sidebar-width))]',
+            !hideSidebar &&
+              'peer-data-[state=collapsed]:w-[calc(100%-var(--sidebar-width-icon)-1rem)]',
+            !hideSidebar &&
+              'peer-data-[state=expanded]:w-[calc(100%-var(--sidebar-width))]',
             'sm:transition-[width] sm:duration-200 sm:ease-linear',
             'flex h-svh flex-col',
             'has-[main.fixed-main]:group-data-[scroll-locked=1]/body:h-svh'
