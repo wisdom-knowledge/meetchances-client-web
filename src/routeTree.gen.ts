@@ -27,22 +27,10 @@ import { Route as ClerkauthRouteRouteImport } from './routes/clerk/(auth)/route'
 import { Route as AuthenticatedSettingsRouteRouteImport } from './routes/_authenticated/settings/route'
 import { Route as AuthenticatedUsersIndexRouteImport } from './routes/_authenticated/users/index'
 import { Route as AuthenticatedTasksIndexRouteImport } from './routes/_authenticated/tasks/index'
-import { Route as AuthenticatedTalentPoolIndexRouteImport } from './routes/_authenticated/talent-pool/index'
 import { Route as AuthenticatedSettingsIndexRouteImport } from './routes/_authenticated/settings/index'
-import { Route as AuthenticatedResumeIndexRouteImport } from './routes/_authenticated/resume/index'
-import { Route as AuthenticatedResumeUploadIndexRouteImport } from './routes/_authenticated/resume-upload/index'
-import { Route as AuthenticatedJobsIndexRouteImport } from './routes/_authenticated/jobs/index'
-import { Route as AuthenticatedJobRecommendIndexRouteImport } from './routes/_authenticated/job-recommend/index'
-import { Route as AuthenticatedJobDetailIndexRouteImport } from './routes/_authenticated/job-detail/index'
-import { Route as AuthenticatedInvitedIndexRouteImport } from './routes/_authenticated/invited/index'
-import { Route as AuthenticatedInterviewIndexRouteImport } from './routes/_authenticated/interview/index'
-import { Route as AuthenticatedInterviewReportsIndexRouteImport } from './routes/_authenticated/interview-reports/index'
 import { Route as AuthenticatedHomeIndexRouteImport } from './routes/_authenticated/home/index'
 import { Route as AuthenticatedHelpCenterIndexRouteImport } from './routes/_authenticated/help-center/index'
-import { Route as AuthenticatedFinishIndexRouteImport } from './routes/_authenticated/finish/index'
-import { Route as AuthenticatedChatsIndexRouteImport } from './routes/_authenticated/chats/index'
 import { Route as AuthenticatedAppsIndexRouteImport } from './routes/_authenticated/apps/index'
-import { Route as AuthenticatedAnnotateReportIndexRouteImport } from './routes/_authenticated/annotate-report/index'
 import { Route as ClerkAuthenticatedUserManagementRouteImport } from './routes/clerk/_authenticated/user-management'
 import { Route as ClerkauthSignUpRouteImport } from './routes/clerk/(auth)/sign-up'
 import { Route as ClerkauthSignInRouteImport } from './routes/clerk/(auth)/sign-in'
@@ -50,8 +38,6 @@ import { Route as AuthenticatedSettingsNotificationsRouteImport } from './routes
 import { Route as AuthenticatedSettingsDisplayRouteImport } from './routes/_authenticated/settings/display'
 import { Route as AuthenticatedSettingsAppearanceRouteImport } from './routes/_authenticated/settings/appearance'
 import { Route as AuthenticatedSettingsAccountRouteImport } from './routes/_authenticated/settings/account'
-import { Route as AuthenticatedInterviewSessionRouteImport } from './routes/_authenticated/interview/session'
-import { Route as AuthenticatedInterviewPrepareRouteImport } from './routes/_authenticated/interview/prepare'
 
 const ClerkRouteRoute = ClerkRouteRouteImport.update({
   id: '/clerk',
@@ -141,64 +127,11 @@ const AuthenticatedTasksIndexRoute = AuthenticatedTasksIndexRouteImport.update({
   path: '/tasks/',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AuthenticatedTalentPoolIndexRoute =
-  AuthenticatedTalentPoolIndexRouteImport.update({
-    id: '/talent-pool/',
-    path: '/talent-pool/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
 const AuthenticatedSettingsIndexRoute =
   AuthenticatedSettingsIndexRouteImport.update({
     id: '/',
     path: '/',
     getParentRoute: () => AuthenticatedSettingsRouteRoute,
-  } as any)
-const AuthenticatedResumeIndexRoute =
-  AuthenticatedResumeIndexRouteImport.update({
-    id: '/resume/',
-    path: '/resume/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedResumeUploadIndexRoute =
-  AuthenticatedResumeUploadIndexRouteImport.update({
-    id: '/resume-upload/',
-    path: '/resume-upload/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedJobsIndexRoute = AuthenticatedJobsIndexRouteImport.update({
-  id: '/jobs/',
-  path: '/jobs/',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedJobRecommendIndexRoute =
-  AuthenticatedJobRecommendIndexRouteImport.update({
-    id: '/job-recommend/',
-    path: '/job-recommend/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedJobDetailIndexRoute =
-  AuthenticatedJobDetailIndexRouteImport.update({
-    id: '/job-detail/',
-    path: '/job-detail/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedInvitedIndexRoute =
-  AuthenticatedInvitedIndexRouteImport.update({
-    id: '/invited/',
-    path: '/invited/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedInterviewIndexRoute =
-  AuthenticatedInterviewIndexRouteImport.update({
-    id: '/interview/',
-    path: '/interview/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedInterviewReportsIndexRoute =
-  AuthenticatedInterviewReportsIndexRouteImport.update({
-    id: '/interview-reports/',
-    path: '/interview-reports/',
-    getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedHomeIndexRoute = AuthenticatedHomeIndexRouteImport.update({
   id: '/home/',
@@ -211,28 +144,11 @@ const AuthenticatedHelpCenterIndexRoute =
     path: '/help-center/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedFinishIndexRoute =
-  AuthenticatedFinishIndexRouteImport.update({
-    id: '/finish/',
-    path: '/finish/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedChatsIndexRoute = AuthenticatedChatsIndexRouteImport.update({
-  id: '/chats/',
-  path: '/chats/',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
 const AuthenticatedAppsIndexRoute = AuthenticatedAppsIndexRouteImport.update({
   id: '/apps/',
   path: '/apps/',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const AuthenticatedAnnotateReportIndexRoute =
-  AuthenticatedAnnotateReportIndexRouteImport.update({
-    id: '/annotate-report/',
-    path: '/annotate-report/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
 const ClerkAuthenticatedUserManagementRoute =
   ClerkAuthenticatedUserManagementRouteImport.update({
     id: '/user-management',
@@ -273,18 +189,6 @@ const AuthenticatedSettingsAccountRoute =
     path: '/account',
     getParentRoute: () => AuthenticatedSettingsRouteRoute,
   } as any)
-const AuthenticatedInterviewSessionRoute =
-  AuthenticatedInterviewSessionRouteImport.update({
-    id: '/interview/session',
-    path: '/interview/session',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedInterviewPrepareRoute =
-  AuthenticatedInterviewPrepareRouteImport.update({
-    id: '/interview/prepare',
-    path: '/interview/prepare',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/clerk': typeof ClerkAuthenticatedRouteRouteWithChildren
@@ -301,8 +205,6 @@ export interface FileRoutesByFullPath {
   '/500': typeof errors500Route
   '/503': typeof errors503Route
   '/': typeof AuthenticatedIndexRoute
-  '/interview/prepare': typeof AuthenticatedInterviewPrepareRoute
-  '/interview/session': typeof AuthenticatedInterviewSessionRoute
   '/settings/account': typeof AuthenticatedSettingsAccountRoute
   '/settings/appearance': typeof AuthenticatedSettingsAppearanceRoute
   '/settings/display': typeof AuthenticatedSettingsDisplayRoute
@@ -310,22 +212,10 @@ export interface FileRoutesByFullPath {
   '/clerk/sign-in': typeof ClerkauthSignInRoute
   '/clerk/sign-up': typeof ClerkauthSignUpRoute
   '/clerk/user-management': typeof ClerkAuthenticatedUserManagementRoute
-  '/annotate-report': typeof AuthenticatedAnnotateReportIndexRoute
   '/apps': typeof AuthenticatedAppsIndexRoute
-  '/chats': typeof AuthenticatedChatsIndexRoute
-  '/finish': typeof AuthenticatedFinishIndexRoute
   '/help-center': typeof AuthenticatedHelpCenterIndexRoute
   '/home': typeof AuthenticatedHomeIndexRoute
-  '/interview-reports': typeof AuthenticatedInterviewReportsIndexRoute
-  '/interview': typeof AuthenticatedInterviewIndexRoute
-  '/invited': typeof AuthenticatedInvitedIndexRoute
-  '/job-detail': typeof AuthenticatedJobDetailIndexRoute
-  '/job-recommend': typeof AuthenticatedJobRecommendIndexRoute
-  '/jobs': typeof AuthenticatedJobsIndexRoute
-  '/resume-upload': typeof AuthenticatedResumeUploadIndexRoute
-  '/resume': typeof AuthenticatedResumeIndexRoute
   '/settings/': typeof AuthenticatedSettingsIndexRoute
-  '/talent-pool': typeof AuthenticatedTalentPoolIndexRoute
   '/tasks': typeof AuthenticatedTasksIndexRoute
   '/users': typeof AuthenticatedUsersIndexRoute
 }
@@ -342,8 +232,6 @@ export interface FileRoutesByTo {
   '/500': typeof errors500Route
   '/503': typeof errors503Route
   '/': typeof AuthenticatedIndexRoute
-  '/interview/prepare': typeof AuthenticatedInterviewPrepareRoute
-  '/interview/session': typeof AuthenticatedInterviewSessionRoute
   '/settings/account': typeof AuthenticatedSettingsAccountRoute
   '/settings/appearance': typeof AuthenticatedSettingsAppearanceRoute
   '/settings/display': typeof AuthenticatedSettingsDisplayRoute
@@ -351,22 +239,10 @@ export interface FileRoutesByTo {
   '/clerk/sign-in': typeof ClerkauthSignInRoute
   '/clerk/sign-up': typeof ClerkauthSignUpRoute
   '/clerk/user-management': typeof ClerkAuthenticatedUserManagementRoute
-  '/annotate-report': typeof AuthenticatedAnnotateReportIndexRoute
   '/apps': typeof AuthenticatedAppsIndexRoute
-  '/chats': typeof AuthenticatedChatsIndexRoute
-  '/finish': typeof AuthenticatedFinishIndexRoute
   '/help-center': typeof AuthenticatedHelpCenterIndexRoute
   '/home': typeof AuthenticatedHomeIndexRoute
-  '/interview-reports': typeof AuthenticatedInterviewReportsIndexRoute
-  '/interview': typeof AuthenticatedInterviewIndexRoute
-  '/invited': typeof AuthenticatedInvitedIndexRoute
-  '/job-detail': typeof AuthenticatedJobDetailIndexRoute
-  '/job-recommend': typeof AuthenticatedJobRecommendIndexRoute
-  '/jobs': typeof AuthenticatedJobsIndexRoute
-  '/resume-upload': typeof AuthenticatedResumeUploadIndexRoute
-  '/resume': typeof AuthenticatedResumeIndexRoute
   '/settings': typeof AuthenticatedSettingsIndexRoute
-  '/talent-pool': typeof AuthenticatedTalentPoolIndexRoute
   '/tasks': typeof AuthenticatedTasksIndexRoute
   '/users': typeof AuthenticatedUsersIndexRoute
 }
@@ -388,8 +264,6 @@ export interface FileRoutesById {
   '/(errors)/500': typeof errors500Route
   '/(errors)/503': typeof errors503Route
   '/_authenticated/': typeof AuthenticatedIndexRoute
-  '/_authenticated/interview/prepare': typeof AuthenticatedInterviewPrepareRoute
-  '/_authenticated/interview/session': typeof AuthenticatedInterviewSessionRoute
   '/_authenticated/settings/account': typeof AuthenticatedSettingsAccountRoute
   '/_authenticated/settings/appearance': typeof AuthenticatedSettingsAppearanceRoute
   '/_authenticated/settings/display': typeof AuthenticatedSettingsDisplayRoute
@@ -397,22 +271,10 @@ export interface FileRoutesById {
   '/clerk/(auth)/sign-in': typeof ClerkauthSignInRoute
   '/clerk/(auth)/sign-up': typeof ClerkauthSignUpRoute
   '/clerk/_authenticated/user-management': typeof ClerkAuthenticatedUserManagementRoute
-  '/_authenticated/annotate-report/': typeof AuthenticatedAnnotateReportIndexRoute
   '/_authenticated/apps/': typeof AuthenticatedAppsIndexRoute
-  '/_authenticated/chats/': typeof AuthenticatedChatsIndexRoute
-  '/_authenticated/finish/': typeof AuthenticatedFinishIndexRoute
   '/_authenticated/help-center/': typeof AuthenticatedHelpCenterIndexRoute
   '/_authenticated/home/': typeof AuthenticatedHomeIndexRoute
-  '/_authenticated/interview-reports/': typeof AuthenticatedInterviewReportsIndexRoute
-  '/_authenticated/interview/': typeof AuthenticatedInterviewIndexRoute
-  '/_authenticated/invited/': typeof AuthenticatedInvitedIndexRoute
-  '/_authenticated/job-detail/': typeof AuthenticatedJobDetailIndexRoute
-  '/_authenticated/job-recommend/': typeof AuthenticatedJobRecommendIndexRoute
-  '/_authenticated/jobs/': typeof AuthenticatedJobsIndexRoute
-  '/_authenticated/resume-upload/': typeof AuthenticatedResumeUploadIndexRoute
-  '/_authenticated/resume/': typeof AuthenticatedResumeIndexRoute
   '/_authenticated/settings/': typeof AuthenticatedSettingsIndexRoute
-  '/_authenticated/talent-pool/': typeof AuthenticatedTalentPoolIndexRoute
   '/_authenticated/tasks/': typeof AuthenticatedTasksIndexRoute
   '/_authenticated/users/': typeof AuthenticatedUsersIndexRoute
 }
@@ -433,8 +295,6 @@ export interface FileRouteTypes {
     | '/500'
     | '/503'
     | '/'
-    | '/interview/prepare'
-    | '/interview/session'
     | '/settings/account'
     | '/settings/appearance'
     | '/settings/display'
@@ -442,22 +302,10 @@ export interface FileRouteTypes {
     | '/clerk/sign-in'
     | '/clerk/sign-up'
     | '/clerk/user-management'
-    | '/annotate-report'
     | '/apps'
-    | '/chats'
-    | '/finish'
     | '/help-center'
     | '/home'
-    | '/interview-reports'
-    | '/interview'
-    | '/invited'
-    | '/job-detail'
-    | '/job-recommend'
-    | '/jobs'
-    | '/resume-upload'
-    | '/resume'
     | '/settings/'
-    | '/talent-pool'
     | '/tasks'
     | '/users'
   fileRoutesByTo: FileRoutesByTo
@@ -474,8 +322,6 @@ export interface FileRouteTypes {
     | '/500'
     | '/503'
     | '/'
-    | '/interview/prepare'
-    | '/interview/session'
     | '/settings/account'
     | '/settings/appearance'
     | '/settings/display'
@@ -483,22 +329,10 @@ export interface FileRouteTypes {
     | '/clerk/sign-in'
     | '/clerk/sign-up'
     | '/clerk/user-management'
-    | '/annotate-report'
     | '/apps'
-    | '/chats'
-    | '/finish'
     | '/help-center'
     | '/home'
-    | '/interview-reports'
-    | '/interview'
-    | '/invited'
-    | '/job-detail'
-    | '/job-recommend'
-    | '/jobs'
-    | '/resume-upload'
-    | '/resume'
     | '/settings'
-    | '/talent-pool'
     | '/tasks'
     | '/users'
   id:
@@ -519,8 +353,6 @@ export interface FileRouteTypes {
     | '/(errors)/500'
     | '/(errors)/503'
     | '/_authenticated/'
-    | '/_authenticated/interview/prepare'
-    | '/_authenticated/interview/session'
     | '/_authenticated/settings/account'
     | '/_authenticated/settings/appearance'
     | '/_authenticated/settings/display'
@@ -528,22 +360,10 @@ export interface FileRouteTypes {
     | '/clerk/(auth)/sign-in'
     | '/clerk/(auth)/sign-up'
     | '/clerk/_authenticated/user-management'
-    | '/_authenticated/annotate-report/'
     | '/_authenticated/apps/'
-    | '/_authenticated/chats/'
-    | '/_authenticated/finish/'
     | '/_authenticated/help-center/'
     | '/_authenticated/home/'
-    | '/_authenticated/interview-reports/'
-    | '/_authenticated/interview/'
-    | '/_authenticated/invited/'
-    | '/_authenticated/job-detail/'
-    | '/_authenticated/job-recommend/'
-    | '/_authenticated/jobs/'
-    | '/_authenticated/resume-upload/'
-    | '/_authenticated/resume/'
     | '/_authenticated/settings/'
-    | '/_authenticated/talent-pool/'
     | '/_authenticated/tasks/'
     | '/_authenticated/users/'
   fileRoutesById: FileRoutesById
@@ -691,75 +511,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedTasksIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/talent-pool/': {
-      id: '/_authenticated/talent-pool/'
-      path: '/talent-pool'
-      fullPath: '/talent-pool'
-      preLoaderRoute: typeof AuthenticatedTalentPoolIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
     '/_authenticated/settings/': {
       id: '/_authenticated/settings/'
       path: '/'
       fullPath: '/settings/'
       preLoaderRoute: typeof AuthenticatedSettingsIndexRouteImport
       parentRoute: typeof AuthenticatedSettingsRouteRoute
-    }
-    '/_authenticated/resume/': {
-      id: '/_authenticated/resume/'
-      path: '/resume'
-      fullPath: '/resume'
-      preLoaderRoute: typeof AuthenticatedResumeIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/resume-upload/': {
-      id: '/_authenticated/resume-upload/'
-      path: '/resume-upload'
-      fullPath: '/resume-upload'
-      preLoaderRoute: typeof AuthenticatedResumeUploadIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/jobs/': {
-      id: '/_authenticated/jobs/'
-      path: '/jobs'
-      fullPath: '/jobs'
-      preLoaderRoute: typeof AuthenticatedJobsIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/job-recommend/': {
-      id: '/_authenticated/job-recommend/'
-      path: '/job-recommend'
-      fullPath: '/job-recommend'
-      preLoaderRoute: typeof AuthenticatedJobRecommendIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/job-detail/': {
-      id: '/_authenticated/job-detail/'
-      path: '/job-detail'
-      fullPath: '/job-detail'
-      preLoaderRoute: typeof AuthenticatedJobDetailIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/invited/': {
-      id: '/_authenticated/invited/'
-      path: '/invited'
-      fullPath: '/invited'
-      preLoaderRoute: typeof AuthenticatedInvitedIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/interview/': {
-      id: '/_authenticated/interview/'
-      path: '/interview'
-      fullPath: '/interview'
-      preLoaderRoute: typeof AuthenticatedInterviewIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/interview-reports/': {
-      id: '/_authenticated/interview-reports/'
-      path: '/interview-reports'
-      fullPath: '/interview-reports'
-      preLoaderRoute: typeof AuthenticatedInterviewReportsIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/home/': {
       id: '/_authenticated/home/'
@@ -775,32 +532,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedHelpCenterIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/finish/': {
-      id: '/_authenticated/finish/'
-      path: '/finish'
-      fullPath: '/finish'
-      preLoaderRoute: typeof AuthenticatedFinishIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/chats/': {
-      id: '/_authenticated/chats/'
-      path: '/chats'
-      fullPath: '/chats'
-      preLoaderRoute: typeof AuthenticatedChatsIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
     '/_authenticated/apps/': {
       id: '/_authenticated/apps/'
       path: '/apps'
       fullPath: '/apps'
       preLoaderRoute: typeof AuthenticatedAppsIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/annotate-report/': {
-      id: '/_authenticated/annotate-report/'
-      path: '/annotate-report'
-      fullPath: '/annotate-report'
-      preLoaderRoute: typeof AuthenticatedAnnotateReportIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/clerk/_authenticated/user-management': {
@@ -852,20 +588,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSettingsAccountRouteImport
       parentRoute: typeof AuthenticatedSettingsRouteRoute
     }
-    '/_authenticated/interview/session': {
-      id: '/_authenticated/interview/session'
-      path: '/interview/session'
-      fullPath: '/interview/session'
-      preLoaderRoute: typeof AuthenticatedInterviewSessionRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/interview/prepare': {
-      id: '/_authenticated/interview/prepare'
-      path: '/interview/prepare'
-      fullPath: '/interview/prepare'
-      preLoaderRoute: typeof AuthenticatedInterviewPrepareRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
   }
 }
 
@@ -895,23 +617,9 @@ const AuthenticatedSettingsRouteRouteWithChildren =
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedSettingsRouteRoute: typeof AuthenticatedSettingsRouteRouteWithChildren
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
-  AuthenticatedInterviewPrepareRoute: typeof AuthenticatedInterviewPrepareRoute
-  AuthenticatedInterviewSessionRoute: typeof AuthenticatedInterviewSessionRoute
-  AuthenticatedAnnotateReportIndexRoute: typeof AuthenticatedAnnotateReportIndexRoute
   AuthenticatedAppsIndexRoute: typeof AuthenticatedAppsIndexRoute
-  AuthenticatedChatsIndexRoute: typeof AuthenticatedChatsIndexRoute
-  AuthenticatedFinishIndexRoute: typeof AuthenticatedFinishIndexRoute
   AuthenticatedHelpCenterIndexRoute: typeof AuthenticatedHelpCenterIndexRoute
   AuthenticatedHomeIndexRoute: typeof AuthenticatedHomeIndexRoute
-  AuthenticatedInterviewReportsIndexRoute: typeof AuthenticatedInterviewReportsIndexRoute
-  AuthenticatedInterviewIndexRoute: typeof AuthenticatedInterviewIndexRoute
-  AuthenticatedInvitedIndexRoute: typeof AuthenticatedInvitedIndexRoute
-  AuthenticatedJobDetailIndexRoute: typeof AuthenticatedJobDetailIndexRoute
-  AuthenticatedJobRecommendIndexRoute: typeof AuthenticatedJobRecommendIndexRoute
-  AuthenticatedJobsIndexRoute: typeof AuthenticatedJobsIndexRoute
-  AuthenticatedResumeUploadIndexRoute: typeof AuthenticatedResumeUploadIndexRoute
-  AuthenticatedResumeIndexRoute: typeof AuthenticatedResumeIndexRoute
-  AuthenticatedTalentPoolIndexRoute: typeof AuthenticatedTalentPoolIndexRoute
   AuthenticatedTasksIndexRoute: typeof AuthenticatedTasksIndexRoute
   AuthenticatedUsersIndexRoute: typeof AuthenticatedUsersIndexRoute
 }
@@ -919,24 +627,9 @@ interface AuthenticatedRouteRouteChildren {
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedSettingsRouteRoute: AuthenticatedSettingsRouteRouteWithChildren,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
-  AuthenticatedInterviewPrepareRoute: AuthenticatedInterviewPrepareRoute,
-  AuthenticatedInterviewSessionRoute: AuthenticatedInterviewSessionRoute,
-  AuthenticatedAnnotateReportIndexRoute: AuthenticatedAnnotateReportIndexRoute,
   AuthenticatedAppsIndexRoute: AuthenticatedAppsIndexRoute,
-  AuthenticatedChatsIndexRoute: AuthenticatedChatsIndexRoute,
-  AuthenticatedFinishIndexRoute: AuthenticatedFinishIndexRoute,
   AuthenticatedHelpCenterIndexRoute: AuthenticatedHelpCenterIndexRoute,
   AuthenticatedHomeIndexRoute: AuthenticatedHomeIndexRoute,
-  AuthenticatedInterviewReportsIndexRoute:
-    AuthenticatedInterviewReportsIndexRoute,
-  AuthenticatedInterviewIndexRoute: AuthenticatedInterviewIndexRoute,
-  AuthenticatedInvitedIndexRoute: AuthenticatedInvitedIndexRoute,
-  AuthenticatedJobDetailIndexRoute: AuthenticatedJobDetailIndexRoute,
-  AuthenticatedJobRecommendIndexRoute: AuthenticatedJobRecommendIndexRoute,
-  AuthenticatedJobsIndexRoute: AuthenticatedJobsIndexRoute,
-  AuthenticatedResumeUploadIndexRoute: AuthenticatedResumeUploadIndexRoute,
-  AuthenticatedResumeIndexRoute: AuthenticatedResumeIndexRoute,
-  AuthenticatedTalentPoolIndexRoute: AuthenticatedTalentPoolIndexRoute,
   AuthenticatedTasksIndexRoute: AuthenticatedTasksIndexRoute,
   AuthenticatedUsersIndexRoute: AuthenticatedUsersIndexRoute,
 }

@@ -1,7 +1,5 @@
 import { QueryClient } from '@tanstack/react-query'
-import { createRootRouteWithContext, Outlet, useRouterState } from '@tanstack/react-router'
-import { useEffect } from 'react'
-import { useRouterStore } from '@/stores/routerStore'
+import { createRootRouteWithContext, Outlet } from '@tanstack/react-router'
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 // import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Toaster } from '@/components/ui/sonner'
@@ -10,13 +8,6 @@ import GeneralError from '@/features/errors/general-error'
 import NotFoundError from '@/features/errors/not-found-error'
 
 function RootComponent() {
-  const { location } = useRouterState()
-  const setPath = useRouterStore((s) => s.setPath)
-
-  useEffect(() => {
-    setPath(location.href)
-  }, [location.href, setPath])
-
   return (
     <>
       <NavigationProgress />
